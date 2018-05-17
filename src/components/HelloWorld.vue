@@ -17,6 +17,7 @@
       <h3>Price: {{car.price}}</h3>
       <p>Description {{car.description}}</p>
       <button @click="bid(car)">Bid</button>
+      <button @click="deleteCar(car)">Sold!</button>
     </div>
   </div>
 </template>
@@ -51,6 +52,9 @@
       bid(car){
         car.price *= 1.05
         this.$store.dispatch('editCar', car)
+      },
+      deleteCar(car){
+        this.$store.dispatch('deleteCar', car)
       }
     }
   }

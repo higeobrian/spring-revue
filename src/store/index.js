@@ -39,6 +39,12 @@ export default new vuex.Store({
       .then(res=>{
         dispatch('getCars')
       })
+    },
+    deleteCar({dispatch, commit}, car){
+      api.delete('cars/' + car._id)
+      .then(res => {
+        dispatch('getCars')
+      })
     }
   }
 })
