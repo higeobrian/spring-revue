@@ -14,7 +14,8 @@ vue.use(vuex)
 
 export default new vuex.Store({
   state: {
-    cars: []
+    cars: [],
+    username: ''
   },
   mutations: {
     setCars(state, cars){

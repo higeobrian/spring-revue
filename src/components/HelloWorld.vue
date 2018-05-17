@@ -9,7 +9,7 @@
       <input type="url" name="imgUrl" placeholder="imgUrl" v-model="car.imgUrl">
       <button type='submit'>Submit</button>
     </form>
-    <div class="car" v-for="car in cars">
+    <div class="car" v-for="car in cars" >
       <img :src="car.imgUrl">
       <h3>Make: {{car.make}}</h3>
       <h3>Model: {{car.model}}</h3>
