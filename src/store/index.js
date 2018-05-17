@@ -27,6 +27,18 @@ export default new vuex.Store({
         .then(res=>{
           commit('setCars', res.data.data)
         })
+    },
+    addCar({dispatch, commit}, car){
+      api.post('cars', car)
+      .then(res =>{
+        dispatch('getCars')
+      })
+    },
+    editCar({dispatch, commit}, car){
+      api.put('cars/' + car._id, car)
+      .then(res=>{
+        dispatch('getCars')
+      })
     }
   }
 })

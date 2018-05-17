@@ -16,6 +16,7 @@
       <h3>Year: {{car.year}}</h3>
       <h3>Price: {{car.price}}</h3>
       <p>Description {{car.description}}</p>
+      <button @click="bid(car)">Bid</button>
     </div>
   </div>
 </template>
@@ -45,8 +46,11 @@
     },
     methods: {
       addCar(){
-        this.car
-        debugger
+        this.$store.dispatch('addCar', this.car)
+      },
+      bid(car){
+        car.price *= 1.05
+        this.$store.dispatch('editCar', car)
       }
     }
   }
