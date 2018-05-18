@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app container">
     <h1>Re<img class="logo"src="./assets/logo.png">ue</h1>
     <router-view/>
   </div>
